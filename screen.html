@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <label>
+    <label id="area">
         <div>
             <input type="text" id="userText">
         </div>
@@ -41,8 +41,15 @@
         
     </label>
     <script>
+        //Edit
         function edit() {
             document.getElementById("label1").innerText = document.getElementById("userText").value;
+        }
+        //New Box
+        function newBox() {
+            let box = document.createElement("button");
+            box.innerText = "new";
+            document.getElementById("area").appendChild(box);
         }
     </script>
 </body>
