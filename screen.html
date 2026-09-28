@@ -20,25 +20,29 @@
     </style>
 </head>
 <body>
-    <label id="area">
+    <label>
         <div>
             <input type="text" id="userText">
         </div>
-        <div>
-            <button onclick="edit()" id="button1">
+        <div id="area">
+            <div>
+                <button onclick="edit()" id="button1">
                 Edit
-            </button>
-            <input type="checkbox" id="box1">
-            <label id="label1">task 1</label>
-        </div>
-        <div>
-            <button id="button2">
+                </button>
+                <input type="checkbox" id="box1">
+                <label id="label1">task 1</label>
+            </div>
+            <div>
+                <button id="button2">
                 Edit
-            </button>
-            <input type="checkbox" id="box2">
-            <label id="label1">task 2</label>
+                </button>
+                <input type="checkbox" id="box2">
+                <label id="label1">task 2</label>
+            </div>
         </div>
-        
+        <button onclick="newBox()">
+            New Box
+        </button>
     </label>
     <script>
         //Edit
@@ -46,6 +50,7 @@
             document.getElementById("label1").innerText = document.getElementById("userText").value;
         }
         //New Box
+        
         function newBox() {
             let box = document.createElement("button");
             box.innerText = "new";
