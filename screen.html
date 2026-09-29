@@ -49,12 +49,13 @@
         </button>
     </label>
     <script>
+        //Retrieval
+        let task = JSON.parse(localStorage.getItem("task"));
         //Edit
         function edit() {
             document.getElementById("label1").innerText = document.getElementById("userText").value;
         }
         //New Box
-        
         function newBox() {
             let div = document.createElement("div");
             div.id = "div1";
