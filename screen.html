@@ -52,11 +52,12 @@
         //Retrieval
         let task = JSON.parse(localStorage.getItem("task"));
         if (task !== null){
-            newBox;
+            newBox(task);
         }
         //Edit
         function edit() {
             document.getElementById("label1").innerText = document.getElementById("userText").value;
+            localStorage.setItem("task",JSON.stringify(document.getElementById("userText").value))
         }
         //New Box
         function newBox(text = "task") {
@@ -77,6 +78,8 @@
             document.getElementById("div1").appendChild(box);
             document.getElementById("div1").appendChild(label);
         }
+        //Saving
+
     </script>
 </body>
 </html>
