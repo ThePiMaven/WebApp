@@ -59,7 +59,7 @@
             document.getElementById("label1").innerText = document.getElementById("userText").value;
         }
         //New Box
-        function newBox() {
+        function newBox(text = "task") {
             let div = document.createElement("div");
             div.id = "div1";
             document.getElementById("area").appendChild(div);
@@ -70,7 +70,7 @@
             box.type = "checkbox";
             box.style.marginLeft = "30px";
             let label = document.createElement("label");
-            label.innerText = "task";
+            label.innerText = text;
             label.id = "label1";
             label.style.marginLeft = "30px";
             document.getElementById("div1").appendChild(button);
