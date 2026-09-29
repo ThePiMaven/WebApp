@@ -51,6 +51,9 @@
     <script>
         //Retrieval
         let task = JSON.parse(localStorage.getItem("task"));
+        if (task !== null){
+            newBox;
+        }
         //Edit
         function edit() {
             document.getElementById("label1").innerText = document.getElementById("userText").value;
