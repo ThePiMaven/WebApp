@@ -27,6 +27,7 @@
             <input type="text" id="userText">
         </div>
         <div id="area">
+            <!--
             <div>
                 <button onclick="edit()" id="button1">
                 Edit
@@ -41,6 +42,7 @@
                 <input type="checkbox" id="box2">
                 <label id="label1">task 2</label>
             </div>
+            -->
         </div>
         <button onclick="newBox()">
             New Box
@@ -64,6 +66,7 @@
             box.style.marginLeft = "30px";
             let label = document.createElement("label");
             label.innerText = "task 3";
+            label.id = "label1";
             label.style.marginLeft = "30px";
             document.getElementById("div1").appendChild(button);
             document.getElementById("div1").appendChild(box);
