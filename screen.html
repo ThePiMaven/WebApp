@@ -96,9 +96,9 @@
             label.innerText = text;
             label.id = `label${CheckList.length}`;
             label.style.marginLeft = "30px";
-            document.getElementById("div1").appendChild(button);
-            document.getElementById("div1").appendChild(box);
-            document.getElementById("div1").appendChild(label);
+            document.getElementById(`div${CheckList.length}`).appendChild(button);
+            document.getElementById(`div${CheckList.length}`).appendChild(box);
+            document.getElementById(`div${CheckList.length}`).appendChild(label);
         }
         //Saving
 
