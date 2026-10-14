@@ -68,6 +68,8 @@
         </button>
     </label>
     <script>
+        //Initialize Variables
+        const CheckList = [];
         //Retrieval
         let task = JSON.parse(localStorage.getItem("task"));
         if (task !== null){
@@ -80,6 +82,7 @@
         }
         //New Box
         function newBox(text = "task") {
+            CheckList.push(text);
             let div = document.createElement("div");
             div.id = "div1";
             document.getElementById("area").appendChild(div);
