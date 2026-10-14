@@ -27,9 +27,15 @@
             width: 80px;
         }
         input[type="text"]{
+            display: block;
+            margin: 0 auto;
             height: 100px;
             width: 400px;
             font-size: 100px;
+        }
+        #new{
+            position:fixed;
+            bottom:30px;
         }
     </style>
 </head>
@@ -56,7 +62,7 @@
             </div>
             -->
         </div>
-        <button onclick="newBox()">
+        <button onclick="newBox()" id="new">
             New Box
         </button>
     </label>
