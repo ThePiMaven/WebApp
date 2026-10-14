@@ -76,15 +76,15 @@
             newBox(task);
         }
         //Edit
-        function edit() {
-            document.getElementById("label1").innerText = document.getElementById("userText").value;
+        function edit(num) {
+            document.getElementById(`label${num}`).innerText = document.getElementById("userText").value;
             localStorage.setItem("task",JSON.stringify(document.getElementById("userText").value))
         }
         //New Box
         function newBox(text = "task") {
             CheckList.push(text);
             let div = document.createElement("div");
-            div.id = "div1";
+            div.id = `div${CheckList.length}`;
             document.getElementById("area").appendChild(div);
             let button = document.createElement("button");
             button.innerText = "Edit";
@@ -94,7 +94,7 @@
             box.style.marginLeft = "30px";
             let label = document.createElement("label");
             label.innerText = text;
-            label.id = "label1";
+            label.id = `label${CheckList.length}`;
             label.style.marginLeft = "30px";
             document.getElementById("div1").appendChild(button);
             document.getElementById("div1").appendChild(box);
