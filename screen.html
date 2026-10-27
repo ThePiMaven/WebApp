@@ -73,7 +73,7 @@
         }
         //Edit
         function edit(num) {
-            document.getElementById(`label${num}`).innerText = document.getElementById("userText").value;
+            document.getElementById(`label${num+1}`).innerText = document.getElementById("userText").value;
             localStorage.setItem("task",JSON.stringify(document.getElementById("userText").value))
         }
         //Unique Check
