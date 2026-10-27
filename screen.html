@@ -82,9 +82,8 @@
             document.getElementById(`label${num}`).innerText = document.getElementById("userText").value;
             localStorage.setItem("task",JSON.stringify(document.getElementById("userText").value))
         }
-        //New Box
-        function newBox(text = "task") {
-            //unique entry names
+        //Unique Check
+        function Unique(text){
             unique = false;
             counter = 1;
             adder=0;
@@ -113,6 +112,12 @@
                     break;
                 }
             }
+            return text;
+        }
+        //New Box
+        function newBox(text = "task") {
+            //unique entry names
+            text = Unique(text);
             // Actually making everything
             CheckList.push(text);
             let div = document.createElement("div");
