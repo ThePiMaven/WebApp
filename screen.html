@@ -88,7 +88,7 @@
             document.getElementById("area").appendChild(div);
             let button = document.createElement("button");
             button.innerText = "Edit";
-            button.onclick = edit;
+            button.onclick = edit(CheckList.length);
             let box = document.createElement("input");
             box.type = "checkbox";
             box.style.marginLeft = "30px";
@@ -97,9 +97,6 @@
             label.id = `label${CheckList.length}`;
             label.style.marginLeft = "30px";
             div.append(button,box,label)
-            //document.getElementById(`div${CheckList.length}`).appendChild(button);
-            //document.getElementById(`div${CheckList.length}`).appendChild(box);
-            //document.getElementById(`div${CheckList.length}`).appendChild(label);
         }
         //Saving
 
