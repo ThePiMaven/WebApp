@@ -85,7 +85,7 @@
             CheckList.push(text);
             let div = document.createElement("div");
             div.id = `div${CheckList.length}`;
-            document.getElementById("area").appendChild(div);
+            document.getElementById("area").append(div);
             let button = document.createElement("button");
             button.innerText = "Edit";
             button.onclick = edit(CheckList.length);
