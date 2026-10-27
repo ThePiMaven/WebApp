@@ -82,6 +82,36 @@
         }
         //New Box
         function newBox(text = "task") {
+            //unique entry names
+            unique = false;
+            counter = 1;
+            adder=0;
+            while (!unique){
+                unique = true;
+                counter++;
+                for (let item of CheckList){
+                    if (item==text){
+                        unique=false;
+                        adder++;
+                        break;
+                    }
+                }
+                if (unique==false){
+                    if (adder==1){
+                        temp = `${adder}`;
+                        text+= temp;
+                    }
+                    else{
+                        text = text.slice(0,-1);
+                        temp = `${adder}`;
+                        text+= temp;
+                    }
+                }
+                if (counter>10){
+                    break;
+                }
+            }
+            // Actually making everything
             CheckList.push(text);
             let div = document.createElement("div");
             div.id = `div${CheckList.length}`;
