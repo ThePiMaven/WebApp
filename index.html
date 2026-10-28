@@ -86,7 +86,6 @@
         const CheckList = [];
         //Retrieval
         let newList = JSON.parse(localStorage.getItem("taskList"));
-        alert(JSON.stringify(newList));
         for (let item of newList){
             newBox(item);
         }
