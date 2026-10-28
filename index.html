@@ -46,9 +46,24 @@
             position:fixed !important;
             bottom:200px !important;
         }
-        #debugConsole {
+        /*
+            #debugConsole {
             position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.85);
+            color: lime;
+            font-family: monospace;
+            font-size: 12px;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 9999;
         }
+        */
+        
     </style>
 </head>
 <body>
@@ -63,7 +78,6 @@
         </div>
         
     </label>
-    
     <script>
         //New Button Button
         document.getElementById("new").onclick = () => newBox(document.getElementById("userText").value);
@@ -71,7 +85,7 @@
         const CheckList = [];
         const newList= [];
         //Retrieval
-        console.log("hi");
+        alert("hi");
         newList = JSON.parse(localStorage.getItem("taskList"));
         console.log(newList);
         for (let item of newList){
