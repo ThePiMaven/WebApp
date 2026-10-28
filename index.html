@@ -79,18 +79,18 @@
         
     </label>
     <script>
-        localStorage.clear
+        //localStorage.clear
         //New Button Button
         document.getElementById("new").onclick = () => newBox(document.getElementById("userText").value);
         //Initialize Variables
         const CheckList = [];
         const newList= [];
         //Retrieval
-        //alert("hi");
+        alert("hi");
         newList = JSON.parse(localStorage.getItem("taskList"));
-        for (let item of newList){
-            newBox(item);
-        }
+        //for (let item of newList){
+        //    newBox(item);
+        //}
         //Edit
         function edit(num) {
             document.getElementById(`label${num+1}`).innerText = document.getElementById("userText").value;
