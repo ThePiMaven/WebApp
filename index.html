@@ -86,11 +86,10 @@
         const CheckList = [];
         //Retrieval
         let newList = JSON.parse(localStorage.getItem("taskList"));
-        alert(newList.length);
         alert(JSON.stringify(newList));
-        //for (let item of newList){
-        //    newBox(item);
-        //}
+        for (let item of newList){
+            newBox(item);
+        }
         //Edit
         function edit(num) {
             document.getElementById(`label${num+1}`).innerText = document.getElementById("userText").value;
