@@ -69,7 +69,9 @@
         const newList= [];
         //Retrieval
         newList = JSON.parse(localStorage.getItem("taskList"));
-        
+        let label = document.createElement("label");
+        label.innerText = newList;
+        document.getElementById("area").append(label);
         for (let item of newList){
             let label = document.createElement("label");
             label.innerText = item;
