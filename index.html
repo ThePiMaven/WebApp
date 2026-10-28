@@ -15,7 +15,7 @@
             background-image: url("Images/Parchment.jpg");
             background-size: contain;
             background-position: center -550px;
-            z-index: -1;
+            z-index: 10;
         }
         body{
             touch-action: manipulation;
@@ -41,6 +41,18 @@
             width: 400px;
             font-size: 100px;
             margin-bottom: 50px;
+        }
+        #area{
+            z-index: 12;
+        }
+        #tasks{
+            z-index: 1;
+        }
+        #pump{
+            z-index: 2;
+        }
+        #pill{
+            z-index: 3;
         }
         #new{
             position:fixed !important;
@@ -76,7 +88,12 @@
         </div>
         <div id="area"> 
         </div>
-        
+        <div id="tasks"> 
+        </div>
+        <div id="pump"> 
+        </div>
+        <div id="pill"> 
+        </div>
     </label>
     <script>
         //localStorage.clear
