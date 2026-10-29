@@ -90,9 +90,9 @@
 <body>
     <label>
         <div id="tabs">
-            <button>&#x270D;</button>
-            <button>&#x1F3C3;</button>
-            <button>&#x1F95B;</button>
+            <button id="tab1">&#x270D;</button>
+            <button id="tab2">&#x1F3C3;</button>
+            <button id="tab3">&#x1F95B;</button>
         </div>
         <div id="change">
             <button id="new">
@@ -113,12 +113,19 @@
         //localStorage.clear
         //New Button Button
         document.getElementById("new").onclick = () => newBox(document.getElementById("entry").value);
+        document.getElementById("tab1").onclick = () => switchTab(1);
+        document.getElementById("tab2").onclick = () => switchTab(2);
+        document.getElementById("tab3").onclick = () => switchTab(3);
         //Initialize Variables
         const CheckList = [];
         //Retrieval
         let newList = JSON.parse(localStorage.getItem("taskList"));
         for (let item of newList){
             newBox(item);
+        }
+        //Switch Tabs
+        function switchTab(num) {
+            
         }
         //Edit
         function edit(num) {
