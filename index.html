@@ -58,6 +58,18 @@
             position: relative;
             top: 180px;
         }
+        #tabButton0{
+            position: absolute;
+            top: 0px;
+        }
+        #tabButton1{
+            position: absolute;
+            top: 0px;
+        }
+        #tabButton2{
+            position: absolute;
+            top: 0px;
+        }
         #tab1{
             z-index: 15;
         }
@@ -67,23 +79,6 @@
         #tab3{
             z-index: 1;
         }
-        /*
-            #debugConsole {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            max-height: 200px;
-            overflow-y: auto;
-            background: rgba(0,0,0,0.85);
-            color: lime;
-            font-family: monospace;
-            font-size: 12px;
-            padding: 10px;
-            box-sizing: border-box;
-            z-index: 9999;
-        }
-        */
         
     </style>
 </head>
@@ -131,7 +126,6 @@
         //}
         //Switch Tabs
         function switchTab(num) {
-            alert(num);
             document.getElementById(`tab${currentTab}`).style.zIndex = 1;
             document.getElementById(`tabButton${currentTab}`).style.top = "20px";
             document.getElementById(`tab${num}`).style.zIndex = 15;
