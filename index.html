@@ -53,11 +53,6 @@
             z-index: 101;
             display: flex;
         }
-        #area{
-            z-index: 12;
-            position: relative;
-            top: 180px;
-        }
         #tabButton0{
             position: relative;
             top: 0px;
@@ -72,12 +67,18 @@
         }
         #tab0{
             z-index: 15;
+            position: relative;
+            top: 180px;
         }
         #tab1{
             z-index: 1;
+            position: relative;
+            top: 180px;
         }
         #tab2{
             z-index: 1;
+            position: relative;
+            top: 180px;
         }
         
     </style>
@@ -94,8 +95,6 @@
                 New
             </button>
             <input type="text" id="entry">
-        </div>
-        <div id="area"> 
         </div>
         <div id="tab0"> 
         </div>
@@ -146,7 +145,7 @@
             while (!unique){
                 unique = true;
                 counter++;
-                for (let item of CheckList){
+                for (let item of BigList[currentTab]){
                     if (item==text){
                         unique=false;
                         adder++;
