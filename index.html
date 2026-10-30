@@ -59,13 +59,13 @@
             top: 180px;
         }
         #tab1{
-            z-index: 1;
+            z-index: 15;
         }
         #tab2{
-            z-index: 2;
+            z-index: 1;
         }
         #tab3{
-            z-index: 3;
+            z-index: 1;
         }
         /*
             #debugConsole {
@@ -90,9 +90,9 @@
 <body>
     <label>
         <div id="tabs">
-            <button id="tabButton1">&#x270D;</button>
-            <button id="tabButton2">&#x1F3C3;</button>
-            <button id="tabButton3">&#x1F95B;</button>
+            <button id="tabButton0">&#x270D;</button>
+            <button id="tabButton1">&#x1F3C3;</button>
+            <button id="tabButton2">&#x1F95B;</button>
         </div>
         <div id="change">
             <button id="new">
@@ -102,11 +102,11 @@
         </div>
         <div id="area"> 
         </div>
-        <div id="tasks"> 
+        <div id="tab0"> 
         </div>
-        <div id="pump"> 
+        <div id="tab1"> 
         </div>
-        <div id="pill"> 
+        <div id="tab2"> 
         </div>
     </label>
     <script>
@@ -114,16 +114,16 @@
         //New Button Button
         document.getElementById("new").onclick = () => newBox(document.getElementById("entry").value);
         //Tab Buttons
+        document.getElementById("tabButton0").onclick = () => switchTab(0);
         document.getElementById("tabButton1").onclick = () => switchTab(1);
         document.getElementById("tabButton2").onclick = () => switchTab(2);
-        document.getElementById("tabButton3").onclick = () => switchTab(3);
         //Initialize Variables
         const CheckList = [];
         let BigList = [];
         BigList[0] = [];
         BigList[1] = [];
         BigList[2] = [];
-        let currentTab = 1;
+        let currentTab = 0;
         //Retrieval
         //let newList = JSON.parse(localStorage.getItem("taskList"));
         //for (let item of newList){
@@ -131,10 +131,10 @@
         //}
         //Switch Tabs
         function switchTab(num) {
-            document.getElementById("tab1").style.zIndex = 1;
-            document.getElementById("tab2").style.zIndex = 2;
-            document.getElementById("tab3").style.zIndex = 3;
+            document.getElementById(`tab${currentTab}`).style.zIndex = 1;
+            document.getElementById(`tabButton${currentTab}`).offsetTop = 180;
             document.getElementById(`tab${num}`).style.zIndex = 15;
+            document.getElementById(`tabButton${num}`).offsetTop = 190;
             currentTab = num;
         }
         //Edit
@@ -180,19 +180,20 @@
             //unique entry names
             text = Unique(text);
             // Actually making everything
-            CheckList.push(text);
+            BigList[currentTab].push(text);
+            //CheckList.push(text);
             let div = document.createElement("div");
-            div.id = `div${CheckList.length}`;
-            document.getElementById("area").append(div);
+            div.id = `${currentTab}div${BigList[currentTab].length}`;
+            document.getElementById(`tab${currentTab}`).append(div);
             let button = document.createElement("button");
             button.innerText = "Edit";
-            button.onclick = () => edit(CheckList.indexOf(text));
+            button.onclick = () => edit(BigList[currentTab].indexOf(text));
             let box = document.createElement("input");
             box.type = "checkbox";
             box.style.marginLeft = "30px";
             let label = document.createElement("label");
             label.innerText = text;
-            label.id = `label${CheckList.length}`;
+            label.id = `${currentTab}label${BigList[currentTab].length}`;
             label.style.marginLeft = "30px";
             div.append(button,box,label);
         }
