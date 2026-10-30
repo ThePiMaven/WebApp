@@ -113,11 +113,13 @@
         //localStorage.clear
         //New Button Button
         document.getElementById("new").onclick = () => newBox(document.getElementById("entry").value);
+        //Tab Buttons
         document.getElementById("tab1").onclick = () => switchTab(1);
         document.getElementById("tab2").onclick = () => switchTab(2);
         document.getElementById("tab3").onclick = () => switchTab(3);
         //Initialize Variables
         const CheckList = [];
+        let currentTab = 1;
         //Retrieval
         let newList = JSON.parse(localStorage.getItem("taskList"));
         for (let item of newList){
@@ -125,7 +127,21 @@
         }
         //Switch Tabs
         function switchTab(num) {
-            
+            document.getElementById("tasks").style.zIndex = 1;
+            document.getElementById("pump").style.zIndex = 2;
+            document.getElementById("pill").style.zIndex = 3;
+            if (num == 1){
+                document.getElementById("tasks").style.zIndex = 15;
+                currentTab = 1;
+            }
+            else if (num == 2){
+                document.getElementById("pump").style.zIndex = 15;
+                currentTab = 2;
+            }
+            else if (num == 3){
+                document.getElementById("pill").style.zIndex = 15;
+                currentTab = 3;
+            }
         }
         //Edit
         function edit(num) {
