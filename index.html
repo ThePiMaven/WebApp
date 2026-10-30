@@ -119,10 +119,10 @@
         document.getElementById("tabButton3").onclick = () => switchTab(3);
         //Initialize Variables
         const CheckList = [];
-        const BigList = [];
-        const BigList[0] = [];
-        const BigList[0] = [];
-        const BigList[0] = [];
+        let BigList = [];
+        BigList[0] = [];
+        BigList[1] = [];
+        BigList[2] = [];
         let currentTab = 1;
         //Retrieval
         let newList = JSON.parse(localStorage.getItem("taskList"));
