@@ -69,18 +69,23 @@
             z-index: 15;
             position: relative;
             top: 180px;
+            display: flex;
         }
         #tab1{
             z-index: 1;
             position: relative;
             top: 180px;
+            display: flex;
         }
         #tab2{
             z-index: 1;
             position: relative;
             top: 180px;
+            display: flex;
         }
-        
+        .child{
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -178,6 +183,7 @@
             //CheckList.push(text);
             let div = document.createElement("div");
             div.id = `${currentTab}div${BigList[currentTab].length}`;
+            div.className = "child";
             document.getElementById(`tab${currentTab}`).append(div);
             let button = document.createElement("button");
             button.innerText = "Edit";
